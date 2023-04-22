@@ -8,6 +8,8 @@ import 'package:proy_dosantonias/widgets/text_field_input.dart';
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});
 
+
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

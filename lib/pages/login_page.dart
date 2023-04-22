@@ -5,7 +5,11 @@ import 'package:proy_dosantonias/pallete.dart';
 import 'package:proy_dosantonias/widgets/widgets.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+
+  //controller texto
+  /*final emailController = TextEditingController();
+  final passwordController = TextEditingController();*/
 
   @override
   Widget build(BuildContext context) {
@@ -21,21 +25,21 @@ class LoginPage extends StatelessWidget {
               child: Center(
                 child: Image.asset(
                   'lib/images/icoMain.png',
-                  height: 250,
-                  width: 250,
+                  height: 230,
+                  width: 230,
                 ),
               ),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                const TextInputField(
+                TextInputField(
                   icon: FontAwesomeIcons.envelope,
                   hint: 'Email',
                   inputType: TextInputType.emailAddress,
                   inputAction: TextInputAction.next,
                 ),
-                const PasswordInput(
+                PasswordInput(
                   icon: FontAwesomeIcons.lock,
                   hint: 'Contraseña',
                   inputType: TextInputType.name,
@@ -66,13 +70,16 @@ class LoginPage extends StatelessWidget {
                     border: Border(
                         bottom: BorderSide(width: 1, color: twoAOrange))),
                 child: const Text(
-                  'Crear un Usuario',
+                  'Crea un nuevo Usuario',
                   style: loginBodyText,
                 ),
               ),
             ),
             const SizedBox(
               height: 20,
+            ),
+            Divider(
+              thickness: 0.5,
             ),
           ]),
         )
