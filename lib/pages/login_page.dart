@@ -5,7 +5,7 @@ import 'package:proy_dosantonias/pallete.dart';
 import 'package:proy_dosantonias/widgets/widgets.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+  const LoginPage({super.key});
 
   //controller texto
   /*final emailController = TextEditingController();
@@ -33,13 +33,13 @@ class LoginPage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                TextInputField(
+                const TextInputField(
                   icon: FontAwesomeIcons.envelope,
                   hint: 'Email',
                   inputType: TextInputType.emailAddress,
                   inputAction: TextInputAction.next,
                 ),
-                PasswordInput(
+                const PasswordInput(
                   icon: FontAwesomeIcons.lock,
                   hint: 'Contraseña',
                   inputType: TextInputType.name,
@@ -78,9 +78,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Divider(
-              thickness: 0.5,
-            ),
+           
           ]),
         )
       ],
