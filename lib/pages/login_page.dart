@@ -5,11 +5,11 @@ import 'package:proy_dosantonias/pallete.dart';
 import 'package:proy_dosantonias/widgets/widgets.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key, required void Function() onTap});
 
   //controller texto
-  /*final emailController = TextEditingController();
-  final passwordController = TextEditingController();*/
+  final emailTextController = TextEditingController();
+  final passwordTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,17 +33,20 @@ class LoginPage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                const TextInputField(
+                TextInputField(
                   icon: FontAwesomeIcons.envelope,
                   hint: 'Email',
                   inputType: TextInputType.emailAddress,
                   inputAction: TextInputAction.next,
+                  controller: emailTextController,
                 ),
-                const PasswordInput(
+                PasswordInput(
                   icon: FontAwesomeIcons.lock,
                   hint: 'Contraseña',
                   inputType: TextInputType.name,
                   inputAction: TextInputAction.done,
+                  controller: passwordTextController,
+                  //obscureText agregado al estilo de los field
                 ),
                 const SizedBox(
                   height: 25,
@@ -70,7 +73,7 @@ class LoginPage extends StatelessWidget {
                     border: Border(
                         bottom: BorderSide(width: 1, color: twoAOrange))),
                 child: const Text(
-                  'Crea un nuevo Usuario',
+                  '¿Aún no eres usuario? Regístrate',
                   style: loginBodyText,
                 ),
               ),
@@ -78,7 +81,6 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-           
           ]),
         )
       ],

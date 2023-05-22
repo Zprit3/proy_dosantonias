@@ -6,7 +6,13 @@ import 'package:proy_dosantonias/pallete.dart';
 import 'package:proy_dosantonias/widgets/widgets.dart';
 
 class CreateAccount extends StatelessWidget {
-  const CreateAccount({super.key});
+  CreateAccount({super.key, required void Function() onTap});
+
+  //controller texto
+  final nameEditController = TextEditingController();
+  final emailTextController = TextEditingController();
+  final passwordTextController = TextEditingController();
+  final repPasswordTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -66,27 +72,34 @@ class CreateAccount extends StatelessWidget {
               ),
               Column(
                 children: [
-                  const TextInputField(
-                      icon: FontAwesomeIcons.user,
-                      hint: 'Nombre',
-                      inputType: TextInputType.name,
-                      inputAction: TextInputAction.next),
-                  const TextInputField(
+                  TextInputField(
+                    icon: FontAwesomeIcons.user,
+                    hint: 'Nombre',
+                    inputType: TextInputType.name,
+                    inputAction: TextInputAction.next,
+                    controller: nameEditController,
+                  ),
+                  TextInputField(
                     icon: FontAwesomeIcons.envelope,
                     hint: 'Email',
                     inputType: TextInputType.emailAddress,
                     inputAction: TextInputAction.next,
+                    controller: emailTextController,
                   ),
-                  const PasswordInput(
-                      icon: FontAwesomeIcons.lock,
-                      hint: 'Contraseña',
-                      inputType: TextInputType.name,
-                      inputAction: TextInputAction.next),
-                  const PasswordInput(
-                      icon: FontAwesomeIcons.lock,
-                      hint: 'Confirmar Contraseña',
-                      inputType: TextInputType.name,
-                      inputAction: TextInputAction.done),
+                  PasswordInput(
+                    icon: FontAwesomeIcons.lock,
+                    hint: 'Contraseña',
+                    inputType: TextInputType.name,
+                    inputAction: TextInputAction.next,
+                    controller: passwordTextController,
+                  ),
+                  PasswordInput(
+                    icon: FontAwesomeIcons.lock,
+                    hint: 'Confirmar Contraseña',
+                    inputType: TextInputType.name,
+                    inputAction: TextInputAction.done,
+                    controller: repPasswordTextController,
+                  ),
                   const SizedBox(
                     height: 25,
                   ),

@@ -7,21 +7,22 @@ class PasswordInput extends StatelessWidget {
     required this.icon,
     required this.hint,
     required this.inputType,
-    required this.inputAction, 
-
+    required this.inputAction,
+    required this.controller,
+    
   }) : super(key: key);
-
 
   final IconData icon;
   final String hint;
   final TextInputType inputType;
   final TextInputAction inputAction;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0), 
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Container(
         height: size.height * 0.08,
         width: size.width * 0.8,
@@ -32,9 +33,7 @@ class PasswordInput extends StatelessWidget {
         child: Center(
           child: TextField(
             decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: twoASemiBlack),
-                  borderRadius: BorderRadius.circular(16)),
+              //enableBorder eliminado por exceso de detalles<-
               focusedBorder: OutlineInputBorder(
                   borderSide: const BorderSide(color: twoAOrange),
                   borderRadius: BorderRadius.circular(16)),
