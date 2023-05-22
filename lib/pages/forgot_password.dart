@@ -6,8 +6,11 @@ import 'package:proy_dosantonias/widgets/rounded_button.dart';
 import 'package:proy_dosantonias/widgets/text_field_input.dart';
 
 class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({super.key});
+  ForgotPassword({super.key});
 
+  //controller texto
+  final emailTextController = TextEditingController();
+  final passwordTextController = TextEditingController();
 
 
   @override
@@ -49,11 +52,13 @@ class ForgotPassword extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  const TextInputField(
+                  TextInputField(
                     icon: FontAwesomeIcons.envelope,
                     hint: 'Email',
                     inputType: TextInputType.emailAddress,
                     inputAction: TextInputAction.done,
+                    controller: emailTextController,
+                    
                   ),
                   const SizedBox(
                     height: 20,

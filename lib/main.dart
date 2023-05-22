@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginPage(),
-        'ForgotPassword': (context) => const ForgotPassword(),
-        'CreateAccount': (context) => const CreateAccount(),
+        '/': (context) => LoginPage(onTap: () {  },),
+        'ForgotPassword': (context) => ForgotPassword(),
+        'CreateAccount': (context) => CreateAccount(onTap: () {  },),
       },
     );
   }
